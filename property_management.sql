@@ -23,8 +23,8 @@ DROP TABLE IF EXISTS `property`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `property` (
-  `property_id` int NOT NULL,
-  `parcel_tax_id` varchar(50) DEFAULT NULL,
+  `property_id` char(10) NOT NULL,
+  `parcel_tax_id` char(10) DEFAULT NULL,
   `property_type` enum('Single Family','Multi-Family','Commercial','Industrial') DEFAULT NULL,
   `utilities` enum('Water','Gas','Electricity','Winterized') DEFAULT NULL,
   PRIMARY KEY (`property_id`)
@@ -49,12 +49,12 @@ DROP TABLE IF EXISTS `property_manager`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `property_manager` (
-  `manager_id` int NOT NULL,
+  `manager_id` char(10) NOT NULL,
   `company_name` varchar(100) NOT NULL,
   `address` varchar(250) NOT NULL,
   `contact` varchar(20) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `property_id` int NOT NULL,
+  `property_id` char(10) NOT NULL,
   PRIMARY KEY (`manager_id`),
   KEY `property_id` (`property_id`),
   CONSTRAINT `property_manager_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `property` (`property_id`)
@@ -79,12 +79,12 @@ DROP TABLE IF EXISTS `property_owner`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `property_owner` (
-  `owner_id` int NOT NULL,
+  `owner_id` char(10) NOT NULL,
   `name` varchar(100) NOT NULL,
   `address` varchar(250) NOT NULL,
   `contact` char(10) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `property_id` int NOT NULL,
+  `property_id` char(10) NOT NULL,
   PRIMARY KEY (`owner_id`),
   KEY `property_id` (`property_id`),
   CONSTRAINT `property_owner_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `property` (`property_id`)
@@ -109,8 +109,8 @@ DROP TABLE IF EXISTS `registration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `registration` (
-  `registration_id` int NOT NULL,
-  `property_id` int NOT NULL,
+  `registration_id` char NOT NULL,
+  `property_id` char NOT NULL,
   `fee` int DEFAULT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`registration_id`),
