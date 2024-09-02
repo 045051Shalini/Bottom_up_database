@@ -28,7 +28,7 @@ CREATE TABLE `property` (
   `property_type` enum('Single Family','Multi-Family','Commercial','Industrial') DEFAULT NULL,
   `utilities` enum('Water','Gas','Electricity','Winterized') DEFAULT NULL,
   PRIMARY KEY (`property_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,7 +58,7 @@ CREATE TABLE `property_manager` (
   PRIMARY KEY (`manager_id`),
   KEY `property_id` (`property_id`),
   CONSTRAINT `property_manager_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `property` (`property_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -88,7 +88,7 @@ CREATE TABLE `property_owner` (
   PRIMARY KEY (`owner_id`),
   KEY `property_id` (`property_id`),
   CONSTRAINT `property_owner_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `property` (`property_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -116,7 +116,7 @@ CREATE TABLE `registration` (
   PRIMARY KEY (`registration_id`),
   KEY `property_id` (`property_id`),
   CONSTRAINT `registration_ibfk_1` FOREIGN KEY (`property_id`) REFERENCES `property` (`property_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+);
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
