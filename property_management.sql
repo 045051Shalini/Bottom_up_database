@@ -15,11 +15,9 @@ CREATE TABLE `property` (
 );
 --
 
-LOCK TABLES `property` WRITE;
-/*!40000 ALTER TABLE `property` DISABLE KEYS */;
+
 INSERT INTO `property` VALUES (1,'TX123456','Single Family','Water'),(2,'TX789012','Multi-Family','Gas'),(3,'TX345678','Commercial','Electricity');
-/*!40000 ALTER TABLE `property` ENABLE KEYS */;
-UNLOCK TABLES;
+
 
 --
 -- Table structure for table `property_manager`
