@@ -50,8 +50,8 @@ DROP TABLE IF EXISTS `property_manager`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `property_manager` (
   `manager_id` char(10) NOT NULL,
-  `company_name` varchar(100) NOT NULL,
-  `address` varchar(250) NOT NULL,
+  `company_name` varchar(50) NOT NULL,
+  `address` varchar(80) NOT NULL,
   `contact` char(10) NOT NULL,
   `email` varchar(35) NOT NULL,
   `property_id` char(10) NOT NULL,
