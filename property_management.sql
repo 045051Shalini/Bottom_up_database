@@ -52,8 +52,8 @@ CREATE TABLE `property_manager` (
   `manager_id` char(10) NOT NULL,
   `company_name` varchar(100) NOT NULL,
   `address` varchar(250) NOT NULL,
-  `contact` varchar(20) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `contact` char(10) NOT NULL,
+  `email` varchar(35) NOT NULL,
   `property_id` char(10) NOT NULL,
   PRIMARY KEY (`manager_id`),
   KEY `property_id` (`property_id`),
@@ -80,10 +80,10 @@ DROP TABLE IF EXISTS `property_owner`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `property_owner` (
   `owner_id` char(10) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `address` varchar(250) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `address` varchar(100) NOT NULL,
   `contact` char(10) NOT NULL,
-  `email` varchar(100) NOT NULL,
+  `email` varchar(30) NOT NULL,
   `property_id` char(10) NOT NULL,
   PRIMARY KEY (`owner_id`),
   KEY `property_id` (`property_id`),
@@ -109,8 +109,8 @@ DROP TABLE IF EXISTS `registration`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `registration` (
-  `registration_id` char NOT NULL,
-  `property_id` char NOT NULL,
+  `registration_id` char(10) NOT NULL,
+  `property_id` char(10) NOT NULL,
   `fee` int DEFAULT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`registration_id`),
